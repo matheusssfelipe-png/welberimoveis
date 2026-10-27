@@ -1,0 +1,5 @@
+# Fotos e vídeos originais do cliente (o site usa as versões otimizadas em assets/)
+/IMOVEIS/
+
+.DS_Store
+Thumbs.db
