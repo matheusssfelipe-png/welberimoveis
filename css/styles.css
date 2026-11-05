@@ -746,10 +746,10 @@ p, li { text-wrap: pretty; }
 
   /* Abertura: no retrato a foto mostra mais prédios atrás do texto, então o
      degradê escurece mais a metade de baixo para o texto ficar legível */
-  .hero { padding-top: calc(var(--header-h) + 32px); padding-bottom: 48px; }
+  .hero { align-items: center; padding-top: calc(var(--header-h) + 32px); padding-bottom: 96px; }
   .hero-media img { object-position: 46% 50%; }
   .hero-overlay {
-    background: linear-gradient(180deg, rgba(20,19,15,.45) 0%, rgba(20,19,15,.1) 28%, rgba(20,19,15,.55) 52%, rgba(20,19,15,.9) 100%);
+    background: linear-gradient(180deg, rgba(20,19,15,.5) 0%, rgba(20,19,15,.4) 25%, rgba(20,19,15,.6) 55%, rgba(20,19,15,.88) 100%);
   }
   .hero h1 { font-size: clamp(32px, 9.2vw, 46px); line-height: 1.08; }
   .hero-lead { font-size: 15px; margin: 20px 0 32px; }
