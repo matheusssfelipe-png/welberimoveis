@@ -10,10 +10,9 @@ const WHATSAPP_NUMBER = "5513996584785"; // Welber Tavares
 const ADS_CONVERSION = "AW-18556228155/Xg_dCMXC6LIdELukppBF";
 
 const IMOVEIS = {
-  "WI-01": "Residência Jardim das Águas",
-  "WI-02": "Cobertura Horizonte",
-  "WI-03": "Villa Serena",
-  "WI-04": "Residência Mirante",
+  "WI-01": "Casa pé na areia, Maitinga",
+  "WI-02": "Cobertura vista mar, Centro",
+  "WI-03": "Casa perto do rio, Centro",
 };
 
 const pad = (n) => String(n).padStart(2, "0");
