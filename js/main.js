@@ -6,8 +6,9 @@
 // Número do WhatsApp do cliente: DDI + DDD + número, só dígitos.
 const WHATSAPP_NUMBER = "5513996584785"; // Welber Tavares
 
-// Conversão do Google Ads disparada a cada envio válido do formulário.
+// Conversões do Google Ads: envio válido do formulário e clique no WhatsApp flutuante.
 const ADS_CONVERSION = "AW-18556228155/Xg_dCMXC6LIdELukppBF";
+const ADS_CONVERSION_WHATSAPP = "AW-18556228155/4jgWCL6S8bIdELukppBF";
 
 const IMOVEIS = {
   "WI-01": "Casa pé na areia, Maitinga",
@@ -274,6 +275,13 @@ form.addEventListener("input", (e) => {
   const field = e.target.closest(".field");
   if (field) field.classList.remove("invalid");
   if (e.target.id === "consent") document.querySelector(".consent-error").classList.remove("visible");
+});
+
+// ---- WhatsApp flutuante: abre a conversa com mensagem pronta ----
+const waFloat = document.querySelector(".wa-float");
+waFloat.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá, Welber! Vi o site e quero saber mais sobre os imóveis.")}`;
+waFloat.addEventListener("click", () => {
+  if (typeof gtag === "function") gtag("event", "conversion", { send_to: ADS_CONVERSION_WHATSAPP, transport_type: "beacon" });
 });
 
 // ---- Botão flutuante (mobile): aparece após o hero e some na seção de contato ----
