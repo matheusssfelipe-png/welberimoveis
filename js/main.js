@@ -6,6 +6,9 @@
 // Número do WhatsApp do cliente: DDI + DDD + número, só dígitos.
 const WHATSAPP_NUMBER = "5513996584785"; // Welber Tavares
 
+// Conversão do Google Ads disparada a cada envio válido do formulário.
+const ADS_CONVERSION = "AW-18556228155/Xg_dCMXC6LIdELukppBF";
+
 const IMOVEIS = {
   "WI-01": "Residência Jardim das Águas",
   "WI-02": "Cobertura Horizonte",
@@ -257,6 +260,9 @@ form.addEventListener("submit", (e) => {
     `*Telefone:* ${telefone}`,
     `*Prazo para compra:* ${prazo.value}`,
   ].join("\n");
+
+  // Antes de abrir o WhatsApp, para o hit sair mesmo quando a página é trocada no celular
+  if (typeof gtag === "function") gtag("event", "conversion", { send_to: ADS_CONVERSION, transport_type: "beacon" });
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
   const win = window.open(url, "_blank");
